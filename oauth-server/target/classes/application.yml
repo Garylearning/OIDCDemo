@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    user:
+      name: 123456
+      password: 123456
+  datasource:
+    url: jdbc:mysql://localhost:3306/unified_certification?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: 123456
+    password: 123456
+    hikari:
+      pool-name: HikariCP
+      minimum-idle: 5
+      maximum-pool-size: 15
+      auto-commit: true
+      idle-timeout: 30000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+      max-lifetime: 25200000
+
+logging:
+  level:
+    root: info
+    org.springframework.web: info
+    org.springframework.security: info
+    org.springframework.security.oauth2: info
